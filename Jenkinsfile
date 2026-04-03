@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'built-in'
+            customWorkspace 'C:\\jenkins\\kyrian'
+        }
+    }
 
     stages {
         stage('Build') {
@@ -11,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'npm test -- --watchAll=false --testPathPattern=App'
+                bat 'npm test -- --watchAll=false'
             }
         }
     }
