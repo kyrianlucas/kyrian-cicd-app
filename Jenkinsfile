@@ -11,7 +11,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'npm test -- --watchAll=false'
+                bat 'set CI=false && npm test -- --watchAll=false'
             }
         }
     }
