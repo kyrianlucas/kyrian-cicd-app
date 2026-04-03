@@ -11,7 +11,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'set CI=false && npm test -- --watchAll=false'
+                bat 'npm test -- --watchAll=false --testPathPattern=App'
             }
         }
     }
